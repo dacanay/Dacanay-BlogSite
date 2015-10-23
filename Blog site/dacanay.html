@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section>
+	<div class="header">
+		<p>My Personal Blog</p>
+</div>
+		<article>
+			<form>
+				<div>
+					<div>
+						<label>Title</label>
+					</div>
+					<div>
+						<input type='text' name='title' id = 'input_title'>
+					</div>
+				</div>
+				<div>
+					<div>
+						<label>Author</label>
+					</div>
+					<div>
+						<input type='text' name='author' id='input_author'>
+					</div>
+				</div>
+				<div>
+					<div>
+						<label>Content</label>
+					</div>
+					<div>
+						<textarea name='content' id='input_content'></textarea>
+					</div>
+					<div>
+						<input type='button' value='Submit' onclick="postBlog()"/>
+					</div>
+			</form>
+		</article>
+		<article class='published'>
+			<h1 id='title'></h1>
+			<h6 id='author'></h6>
+			<p id='content'></p>
+		</article>		
+		<footer>All right reserved &copy; 2015</footer>
+</section>
+<script type="text/javascript">
+	function postBlog(){
+		var input_title = document.getElementById('input_title').value;
+		var input_author = document.getElementById('input_author').value;
+		var input_content = document.getElementById('input_content').value;
+
+		document.getElementById('title').innerHTML = input_title;
+		var date_today = new Date();
+		document.getElementById('author').innerHTML = input_author + '\t' + date_today;
+		document.getElementById('content').innerHTML = input_content;
+
+	}
+</script>
+</body>
+</html>
